@@ -64,7 +64,7 @@ namespace DebugConsole
                 return;
             }
             for (var i = 0; i < param.Length; i++) {
-                args2[i] = Convert.ChangeType(args2[i], param[i].ParameterType);
+                args2[i] = Convert.ChangeType(args2[i], param[i].ParameterType, System.Globalization.CultureInfo.InvariantCulture);
             }
             try
             {
