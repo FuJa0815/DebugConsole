@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
+﻿using System.IO;
 
-namespace DebugConsole.ConsoleHandlers
+namespace DebugConsole.Implementations.Misc
 {
     public class FileDebugConsoleHandler : DebugConsoleHandler
     {

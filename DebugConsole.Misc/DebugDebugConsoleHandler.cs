@@ -1,11 +1,6 @@
-﻿namespace DebugConsole.ConsoleHandlers
+﻿namespace DebugConsole.Implementations.Misc
 {
-    using System;
-    using System.Collections.Generic;
     using System.Diagnostics;
-    using System.IO;
-    using System.Linq;
-    using System.Text;
 
     public class DebugDebugConsoleHandler : DebugConsoleHandler
     {

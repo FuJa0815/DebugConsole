@@ -1,4 +1,4 @@
-﻿namespace DebugConsole.Implementations.ConsoleHandlers
+﻿namespace DebugConsole.Implementations.Console
 {
     using System;
 

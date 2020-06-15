@@ -1,5 +1,5 @@
-﻿using System.Threading;
-using DebugConsole.ConsoleHandlers;
+﻿using DebugConsole.Implementations.Console;
+using System.Threading;
 
 namespace DebugConsole.TestApp
 {
@@ -8,8 +8,6 @@ namespace DebugConsole.TestApp
         static void Main(string[] args)
         {
             DebugConsole.Handler = new ConsoleDebugConsoleHandler();
-
-
 
             Thread.Sleep(Timeout.Infinite);
         }
