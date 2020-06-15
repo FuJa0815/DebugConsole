@@ -1,16 +1,11 @@
 ﻿namespace DebugConsole
 {
-    using System;
-    using System.Diagnostics.Tracing;
-    using System.IO;
-    using System.Threading.Tasks;
-
     /// <summary>
     ///   Handles IO for th debug console.
     /// </summary>
     public abstract class DebugConsoleHandler
     {
-        protected void OnInputEvent(string line)
+        protected void OnInput(string line)
         {
             // TODO: Handle console input
         }

@@ -8,6 +8,9 @@ namespace DebugConsole.TestApp
         static void Main(string[] args)
         {
             DebugConsole.Handler = new ConsoleDebugConsoleHandler();
+
+
+
             Thread.Sleep(Timeout.Infinite);
         }
     }
