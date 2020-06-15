@@ -13,5 +13,6 @@ namespace DebugConsole.Implementations.Misc
         public override void ReadLoop() { }
         public override void Write(string value) => sw.Write(value);
         public override void WriteLine(string value) => sw.WriteLine(value);
+        public override void WriteError(string value) => sw.WriteLine(value);
     }
 }
