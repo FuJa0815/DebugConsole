@@ -19,7 +19,10 @@
         /// <exception cref="FieldAccessException">
         ///   The property is readonly or the property cannot be found.
         /// </exception>
-        public static void Set(string propertyName, object value)
+        /// <returns>
+        ///   Retrurns the value.
+        /// </returns>
+        public static string Set(string propertyName, object value)
         {
             (var prop, var mayWrite) = LineParser.GetProperty(propertyName);
 
@@ -30,6 +33,7 @@
 
             var correctValue = Convert.ChangeType(value, prop.PropertyType);
             prop.SetValue(null, correctValue);
+            return value.ToString();
         }
 
         /// <summary>
