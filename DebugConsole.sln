@@ -3,15 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugConsole", "DebugConsole\DebugConsole.csproj", "{C9B37C2D-1F21-4DDD-BB35-FAE1B21ADBA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DebugConsole", "DebugConsole\DebugConsole.csproj", "{C9B37C2D-1F21-4DDD-BB35-FAE1B21ADBA1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugConsole.TestApp", "DebugConsole.TestApp\DebugConsole.TestApp.csproj", "{C9EDFC07-CA60-4BD2-9BE7-83B3D4445628}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugConsole.Implementations.Console", "DebugConsole.Implementations.Console\DebugConsole.Implementations.Console.csproj", "{B2D03731-1B64-416C-B0C1-13F668ADB920}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DebugConsole.Implementations.Console", "DebugConsole.Implementations.Console\DebugConsole.Implementations.Console.csproj", "{B2D03731-1B64-416C-B0C1-13F668ADB920}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DebugConsole.Implementations", "DebugConsole.Implementations", "{DFCC6028-B1C5-4056-B1FC-282B8FD1A65A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugConsole.Implementations.Misc", "DebugConsole.Implementations.Misc\DebugConsole.Implementations.Misc.csproj", "{2AEAA799-7DD2-4C96-BD3E-E32DDFB75E48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DebugConsole.Implementations.Misc", "DebugConsole.Implementations.Misc\DebugConsole.Implementations.Misc.csproj", "{2AEAA799-7DD2-4C96-BD3E-E32DDFB75E48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugConsole.Implementations.WPF", "DebugConsole.Implementations.WPF\DebugConsole.Implementations.WPF.csproj", "{D81352DA-24D4-4180-967C-59092710ECC0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C4233448-698C-46E0-9BE1-699C66BEF39B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugConsole.TestWPF", "DebugConsole.TestWPF\DebugConsole.TestWPF.csproj", "{14408ED5-CE5F-4C26-8F91-80779E1426F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,13 +41,24 @@ Global
 		{2AEAA799-7DD2-4C96-BD3E-E32DDFB75E48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AEAA799-7DD2-4C96-BD3E-E32DDFB75E48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AEAA799-7DD2-4C96-BD3E-E32DDFB75E48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D81352DA-24D4-4180-967C-59092710ECC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D81352DA-24D4-4180-967C-59092710ECC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D81352DA-24D4-4180-967C-59092710ECC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D81352DA-24D4-4180-967C-59092710ECC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14408ED5-CE5F-4C26-8F91-80779E1426F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14408ED5-CE5F-4C26-8F91-80779E1426F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14408ED5-CE5F-4C26-8F91-80779E1426F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14408ED5-CE5F-4C26-8F91-80779E1426F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{C9EDFC07-CA60-4BD2-9BE7-83B3D4445628} = {C4233448-698C-46E0-9BE1-699C66BEF39B}
 		{B2D03731-1B64-416C-B0C1-13F668ADB920} = {DFCC6028-B1C5-4056-B1FC-282B8FD1A65A}
 		{2AEAA799-7DD2-4C96-BD3E-E32DDFB75E48} = {DFCC6028-B1C5-4056-B1FC-282B8FD1A65A}
+		{D81352DA-24D4-4180-967C-59092710ECC0} = {DFCC6028-B1C5-4056-B1FC-282B8FD1A65A}
+		{14408ED5-CE5F-4C26-8F91-80779E1426F4} = {C4233448-698C-46E0-9BE1-699C66BEF39B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FD399166-6641-4620-B814-69DF3FEB7E1E}

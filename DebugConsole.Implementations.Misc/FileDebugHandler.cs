@@ -10,7 +10,7 @@
         private readonly StreamWriter sw;
 
         /// <summary>
-        ///   Creates a new FileDebugHandler for writing Debug-Info into a file.
+        ///   Initializes a new instance of the <see cref="FileDebugHandler"/> class.
         /// </summary>
         /// <param name="filename">
         ///   The file to be written to.

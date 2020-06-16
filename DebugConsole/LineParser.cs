@@ -32,7 +32,7 @@
 
                       // Get all methods with the DebugFunction attribute
                       // Dictionary<DebugFunctiononAttribute[], MethodInfo>
-                      .ToDictionary(p => p.GetCustomAttributes(typeof(DebugFunctionAttribute), false) as DebugFunctionAttribute[], p => p)
+                      .Select(p => new KeyValuePair<DebugFunctionAttribute[], MethodInfo>(p.GetCustomAttributes(typeof(DebugFunctionAttribute), false) as DebugFunctionAttribute[], p))
 
                       // Flatten the dictionary
                       .SelectMany(kv => kv.Key.Select(p => new KeyValuePair<DebugFunctionAttribute, MethodInfo>(p, kv.Value)))
@@ -45,7 +45,7 @@
 
                       // Get all properties with the DebugProperty attribute
                       // Dictionary<DebugPropertyAttribute[], PropertyInfo>
-                      .ToDictionary(p => p.GetCustomAttributes(typeof(DebugPropertyAttribute), false) as DebugPropertyAttribute[], p => p)
+                      .Select(p => new KeyValuePair<DebugPropertyAttribute[], PropertyInfo>(p.GetCustomAttributes(typeof(DebugPropertyAttribute), false) as DebugPropertyAttribute[], p))
 
                       // Flatten the dictionary
                       .SelectMany(kv => kv.Key.Select(p => new KeyValuePair<DebugPropertyAttribute, PropertyInfo>(p, kv.Value)))
