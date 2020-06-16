@@ -3,7 +3,7 @@
     using System.Diagnostics;
 
     /// <summary>
-    ///   A <see cref="DebugConsole"/> handler for writing to the IDEs Debug window.
+    ///   A <see cref="DebugCon"/> handler for writing to the IDEs Debug window.
     /// </summary>
     public class IdeDebugHandler : DebugConsoleHandler
     {

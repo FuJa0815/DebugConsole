@@ -83,7 +83,7 @@
             catch (FieldAccessException ex)
             {
                 // Method not found
-                DebugConsole.WriteError(ex.Message);
+                DebugCon.WriteError(ex.Message);
                 return;
             }
 
@@ -117,12 +117,12 @@
                     return;
                 }
 
-                DebugConsole.WriteLine(args[0] + " returned " + val.ToString());
+                DebugCon.WriteLine(args[0] + " returned " + val.ToString());
             }
             catch (Exception ex)
             {
                 // Something went wrong
-                DebugConsole.WriteError((ex.InnerException ?? ex).Message);
+                DebugCon.WriteError((ex.InnerException ?? ex).Message);
             }
         }
 
@@ -205,10 +205,10 @@
         /// </param>
         private static void DrawHelp(string method, ParameterInfo[] @params)
         {
-            DebugConsole.WriteLine("Usage for " + method);
+            DebugCon.WriteLine("Usage for " + method);
             foreach (var p in @params)
             {
-                DebugConsole.WriteLine(p.Name + " typeof " + p.ParameterType.ToString());
+                DebugCon.WriteLine(p.Name + " typeof " + p.ParameterType.ToString());
             }
         }
 

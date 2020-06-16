@@ -3,7 +3,7 @@
     using System;
 
     /// <summary>
-    ///   A <see cref="DebugConsole"/> handler for writing and reading from and to the console.
+    ///   A <see cref="DebugCon"/> handler for writing and reading from and to the console.
     /// </summary>
     public class ConsoleDebugHandler : DebugConsoleHandler
     {

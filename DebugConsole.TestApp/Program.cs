@@ -7,7 +7,7 @@ namespace DebugConsole.TestApp
     {
         static void Main(string[] args)
         {
-            DebugConsole.Handler = new ConsoleDebugHandler();
+            DebugCon.Handler = new ConsoleDebugHandler();
             Thread.Sleep(Timeout.Infinite);
         }
 
@@ -15,7 +15,7 @@ namespace DebugConsole.TestApp
         public static void MyFunction(string a1, int i1)
         {
             for(int i = 0; i < i1; i++)
-                DebugConsole.WriteLine("You executed me with " + a1 + ". The first property is " + Text + ", the second one is " + ReadOnlyProperty);
+                DebugCon.WriteLine("You executed me with " + a1 + ". The first property is " + Text + ", the second one is " + ReadOnlyProperty);
         }
 
         [DebugProperty]

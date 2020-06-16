@@ -3,7 +3,7 @@
     using System.IO;
 
     /// <summary>
-    ///   A <see cref="DebugConsole"/> handler for writing to a file.
+    ///   A <see cref="DebugCon"/> handler for writing to a file.
     /// </summary>
     public class FileDebugHandler : DebugConsoleHandler
     {

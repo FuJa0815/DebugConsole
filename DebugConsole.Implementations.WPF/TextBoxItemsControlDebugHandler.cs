@@ -3,7 +3,7 @@
     using System.Windows.Controls;
 
     /// <summary>
-    ///   A <see cref="DebugConsole"/> handler for writing to a <see cref="ItemsControl"/> and reading from a <see cref="TextBox"/>.
+    ///   A <see cref="DebugCon"/> handler for writing to a <see cref="ItemsControl"/> and reading from a <see cref="TextBox"/>.
     /// </summary>
     public class TextBoxItemsControlDebugHandler : DebugConsoleHandler
     {

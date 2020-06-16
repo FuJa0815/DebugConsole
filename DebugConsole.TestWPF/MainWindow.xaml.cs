@@ -12,7 +12,7 @@ namespace DebugConsole.TestWPF
         public MainWindow()
         {
             InitializeComponent();
-            DebugConsole.Handler = new TextBoxItemsControlDebugHandler(Input, Output);
+            DebugCon.Handler = new TextBoxItemsControlDebugHandler(Input, Output);
             this.DataContext = this;
         }
 
