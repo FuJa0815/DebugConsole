@@ -12,7 +12,7 @@ You must set a public static property to get started.
 You can use your own implementation for handling input and output, or you can use one of the predefined implementations.
 
 In this example, we define the Console as our DebugHandler.
-> DebugConsole.Handler = new ConsoleDebugHandler();
+> DebugCon.Handler = new ConsoleDebugHandler();
 
 Next, we have to define static Methods as `DebugFunctions`. This allows you to execute Methods from your console.
 
@@ -25,7 +25,7 @@ class Program
 {
    static void Main(string[] args)
    {
-        DebugConsole.Handler = new ConsoleDebugHandler();
+        DebugCon.Handler = new ConsoleDebugHandler();
         Thread.Sleep(Timeout.Infinite);
    }
 
@@ -59,6 +59,7 @@ Input | Output
 
 ## Predefined Debug Consoles
 * `DebugConsole.Implementations.Console.ConsoleDebugHandler`
+* `DebugConsole.Implementations.WPF.TextBoxItemsControlDebugHandler`
 * `DebugConsole.Implementations.Misc.FileDebugHandler` (Readonly)
 * `DebugConsole.Implementations.Misc.IdeDebugHandler` (Readonly)
 
