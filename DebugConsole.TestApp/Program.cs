@@ -8,7 +8,6 @@ namespace DebugConsole.TestApp
         static void Main(string[] args)
         {
             DebugConsole.Handler = new ConsoleDebugConsoleHandler();
-
             Thread.Sleep(Timeout.Infinite);
         }
 
@@ -16,7 +15,10 @@ namespace DebugConsole.TestApp
         public static void MyFunction(string a1, int i1)
         {
             for(int i = 0; i < i1; i++)
-                DebugConsole.WriteLine("you executed me with " + a1);
+                DebugConsole.WriteLine("you executed me with " + a1 + ". The property is " + Text);
         }
+
+        [DebugProperty, DebugProperty("text", false)]
+        public static string Text { get; set; } = "wow";
     }
 }

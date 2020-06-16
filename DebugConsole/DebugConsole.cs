@@ -1,8 +1,7 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
-
-namespace DebugConsole
+﻿namespace DebugConsole
 {
+    using System.Threading;
+
     /// <summary>
     ///   The main class of the libary.
     /// </summary>
@@ -33,14 +32,20 @@ namespace DebugConsole
         }
 
         #region WriteLine
+        /// <inheritdoc cref="DebugConsole.WriteLine(string)"/>
         public static void WriteLine() => DebugConsole.WriteLine(string.Empty);
-        public static void WriteLine(object value) => DebugConsole.WriteLine(value.ToString());
+        /// <inheritdoc cref="DebugConsole.WriteLine(object)"/>
+        public static void WriteLine(object value) => DebugConsole.WriteLine(value);
+        /// <inheritdoc cref="DebugConsole.WriteLine(string)"/>
         public static void WriteLine(string value) => Handler.WriteLine(value);
+        /// <inheritdoc cref="DebugConsole.WriteError(string)"/>
         public static void WriteError(string value) => Handler.WriteError(value);
         #endregion WriteLine
         #region Write
+        /// <inheritdoc cref="DebugConsole.Write(string)"/>
         public static void Write(string value) => Handler.Write(value);
-        public static void Write(object value) => DebugConsole.Write(value.ToString());
+        /// <inheritdoc cref="DebugConsole.Write(object)"/>
+        public static void Write(object value) => DebugConsole.Write(value);
         #endregion Write
     }
 }

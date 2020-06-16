@@ -1,24 +1,55 @@
 ﻿namespace DebugConsole
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Reflection;
 
+    /// <summary>
+    ///   A set of predefined <see cref="DebugFunctionAttribute"/>s
+    /// </summary>
     public static class PredefinedFunctions
     {
-        [DebugFunction]
+        /// <summary>
+        ///   Overrides the old value of a static property with a new one.
+        /// </summary>
+        /// <param name="propertyName">
+        ///   The property to be set.
+        /// </param>
+        /// <param name="value">
+        ///   The new value of the given property.
+        /// </param>
+        /// <exception cref="FieldAccessException">
+        ///   The property is readonly or the property cannot be found.
+        /// </exception>
         public static void Set(string propertyName, object value)
         {
-            var prop = LineParser.properties.First(p => p.Key.PropertyExecutionName == propertyName);
+            (var prop, var mayWrite) = LineParser.GetProperty(propertyName);
 
-            if (prop.Equals(default(KeyValuePair<DebugPropertyAttribute, PropertyInfo>)))
-                throw new FieldAccessException("Property " + propertyName + " not found");
+            if (!mayWrite)
+                throw new FieldAccessException("Property " + propertyName + " is readonly");
 
-            if (!prop.Value.CanWrite)
-                throw new FieldAccessException("Property " + propertyName + " is read only");
-            var correctValue = Convert.ChangeType(value, prop.Value.PropertyType);
-            prop.Value.SetValue(null, correctValue);
+            var correctValue = Convert.ChangeType(value, prop.PropertyType);
+            prop.SetValue(null, correctValue);
+        }
+
+        /// <summary>
+        ///   Gets the value of a static property.
+        /// </summary>
+        /// <param name="propertyName">
+        ///   The property to be read.
+        /// </param>
+        /// <returns>
+        ///   The value of the property.
+        /// </returns>
+        /// <exception cref="FieldAccessException">
+        ///   The property is writeonly or cannot be found.
+        /// </exception>
+        public static object Get(string propertyName)
+        {
+            (var prop, var mayWrite) = LineParser.GetProperty(propertyName);
+
+            if (!prop.CanRead)
+                throw new FieldAccessException("Property " + propertyName + " is writeonly");
+
+            return prop.GetValue(null);
         }
     }
 }
