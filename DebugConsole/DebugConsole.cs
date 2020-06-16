@@ -36,6 +36,7 @@ namespace DebugConsole
         public static void WriteLine() => DebugConsole.WriteLine(string.Empty);
         public static void WriteLine(object value) => DebugConsole.WriteLine(value.ToString());
         public static void WriteLine(string value) => Handler.WriteLine(value);
+        public static void WriteError(string value) => Handler.WriteError(value);
         #endregion WriteLine
         #region Write
         public static void Write(string value) => Handler.Write(value);
