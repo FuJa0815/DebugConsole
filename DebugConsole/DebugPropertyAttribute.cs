@@ -4,22 +4,14 @@
     using System.Runtime.CompilerServices;
 
     /// <summary>
-    ///   An attribute to declare a public static property as read and writeable from the DebugConsole
+    ///   An attribute to declare a public static property as read and writeable from the DebugConsole.
     /// </summary>
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = true)]
     public class DebugPropertyAttribute : Attribute
     {
         /// <summary>
-        ///   The name of the property. Per default it is its implementation name.
+        ///   Initializes a new instance of the <see cref="DebugPropertyAttribute"/> class.
         /// </summary>
-        public string PropertyExecutionName { get; private set; }
-
-        /// <summary>
-        ///  If the Set-command should be allowed for this property.
-        ///  Ignored if the property is readonly.
-        /// </summary>
-        public bool MayWrite { get; private set; }
-
         /// <param name="propertyExecutionName">
         ///   The name of the property. Used by the DebugConsole.
         ///   Per default it is its implementation name.
@@ -33,5 +25,16 @@
             this.MayWrite = mayWrite;
             this.PropertyExecutionName = propertyExecutionName;
         }
+
+        /// <summary>
+        ///   Gets the name of the property. Per default it is its implementation name.
+        /// </summary>
+        public string PropertyExecutionName { get; private set; }
+
+        /// <summary>
+        ///  Gets a value indicating whether the Set-command should be allowed for this property.
+        ///  Ignored if the property is readonly.
+        /// </summary>
+        public bool MayWrite { get; private set; }
     }
 }

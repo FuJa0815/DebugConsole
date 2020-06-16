@@ -7,7 +7,7 @@ namespace DebugConsole.TestApp
     {
         static void Main(string[] args)
         {
-            DebugConsole.Handler = new ConsoleDebugConsoleHandler();
+            DebugConsole.Handler = new ConsoleDebugHandler();
             Thread.Sleep(Timeout.Infinite);
         }
 
@@ -15,10 +15,13 @@ namespace DebugConsole.TestApp
         public static void MyFunction(string a1, int i1)
         {
             for(int i = 0; i < i1; i++)
-                DebugConsole.WriteLine("you executed me with " + a1 + ". The property is " + Text);
+                DebugConsole.WriteLine("You executed me with " + a1 + ". The first property is " + Text + ", the second one is " + ReadOnlyProperty);
         }
 
-        [DebugProperty, DebugProperty("text", false)]
-        public static string Text { get; set; } = "wow";
+        [DebugProperty]
+        public static string Text { get; set; } = "foo";
+
+        [DebugProperty("Text2", false)]
+        public static string ReadOnlyProperty { get; set; } = "bar";
     }
 }

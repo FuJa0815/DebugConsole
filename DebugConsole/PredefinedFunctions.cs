@@ -3,7 +3,7 @@
     using System;
 
     /// <summary>
-    ///   A set of predefined <see cref="DebugFunctionAttribute"/>s
+    ///   A set of predefined <see cref="DebugFunctionAttribute"/>s.
     /// </summary>
     public static class PredefinedFunctions
     {
@@ -24,7 +24,9 @@
             (var prop, var mayWrite) = LineParser.GetProperty(propertyName);
 
             if (!mayWrite)
+            {
                 throw new FieldAccessException("Property " + propertyName + " is readonly");
+            }
 
             var correctValue = Convert.ChangeType(value, prop.PropertyType);
             prop.SetValue(null, correctValue);
@@ -44,10 +46,12 @@
         /// </exception>
         public static object Get(string propertyName)
         {
-            (var prop, var mayWrite) = LineParser.GetProperty(propertyName);
+            (var prop, _) = LineParser.GetProperty(propertyName);
 
             if (!prop.CanRead)
+            {
                 throw new FieldAccessException("Property " + propertyName + " is writeonly");
+            }
 
             return prop.GetValue(null);
         }

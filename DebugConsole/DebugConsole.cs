@@ -25,27 +25,30 @@
                         new ThreadStart(() =>
                         {
                             while (Thread.CurrentThread.IsAlive)
+                            {
                                 handler.ReadLoop();
+                            }
                         }));
                 readThread.Start();
             }
         }
 
-        #region WriteLine
         /// <inheritdoc cref="DebugConsole.WriteLine(string)"/>
         public static void WriteLine() => DebugConsole.WriteLine(string.Empty);
+
         /// <inheritdoc cref="DebugConsole.WriteLine(object)"/>
         public static void WriteLine(object value) => DebugConsole.WriteLine(value);
+
         /// <inheritdoc cref="DebugConsole.WriteLine(string)"/>
         public static void WriteLine(string value) => Handler.WriteLine(value);
+
         /// <inheritdoc cref="DebugConsole.WriteError(string)"/>
         public static void WriteError(string value) => Handler.WriteError(value);
-        #endregion WriteLine
-        #region Write
+
         /// <inheritdoc cref="DebugConsole.Write(string)"/>
         public static void Write(string value) => Handler.Write(value);
+
         /// <inheritdoc cref="DebugConsole.Write(object)"/>
         public static void Write(object value) => DebugConsole.Write(value);
-        #endregion Write
     }
 }

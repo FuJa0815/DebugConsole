@@ -5,14 +5,18 @@
     /// <summary>
     ///   A <see cref="DebugConsole"/> handler for writing and reading from and to the console.
     /// </summary>
-    public class ConsoleDebugConsoleHandler : DebugConsoleHandler
+    public class ConsoleDebugHandler : DebugConsoleHandler
     {
+        /// <inheritdoc/>
         public override void Write(string value) => Console.Write(value);
 
+        /// <inheritdoc/>
         public override void WriteError(string value) => Console.Error.WriteLine(value);
 
+        /// <inheritdoc/>
         public override void WriteLine(string value) => Console.WriteLine(value);
 
-        protected override void ReadLoop() => OnInput(Console.ReadLine());
+        /// <inheritdoc/>
+        protected override void ReadLoop() => this.OnInput(Console.ReadLine());
     }
 }
