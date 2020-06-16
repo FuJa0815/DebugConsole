@@ -59,40 +59,6 @@
         }
 
         /// <summary>
-        ///   Seperates a line into attributes.
-        /// </summary>
-        /// <param name="commandLine">
-        ///   The line to be parsed.
-        /// </param>
-        /// <returns>
-        ///   An array of attributes.
-        /// </returns>
-        public static object[] CommandLineToArgs(string commandLine)
-        {
-            var argv = CommandLineToArgvW(commandLine, out int argc);
-            if (argv == IntPtr.Zero)
-            {
-                throw new System.ComponentModel.Win32Exception();
-            }
-
-            try
-            {
-                var args = new string[argc];
-                for (var i = 0; i < args.Length; i++)
-                {
-                    var p = Marshal.ReadIntPtr(argv, i * IntPtr.Size);
-                    args[i] = Marshal.PtrToStringUni(p);
-                }
-
-                return args;
-            }
-            finally
-            {
-                Marshal.FreeHGlobal(argv);
-            }
-        }
-
-        /// <summary>
         ///   Handle the line from the console.
         ///   Executes the method or prints an error to the DebugConsole.
         /// </summary>
@@ -108,7 +74,7 @@
 
             // Get the args from the line
             // Example: Set property value
-            var args = CommandLineToArgs(line);
+            var args = SplitArguments(line);
             MethodInfo meth;
             try
             {
@@ -246,8 +212,42 @@
             }
         }
 
-        [DllImport("shell32.dll", SetLastError = true)]
-        private static extern IntPtr CommandLineToArgvW(
-            [MarshalAs(UnmanagedType.LPWStr)] string lpCmdLine, out int pNumArgs);
+        /// <summary>
+        ///   Splits a string into its args.
+        ///   Supports not splitting by space if it is surrounded by " or '.
+        /// </summary>
+        /// <param name="commandLine">
+        ///   The line to be split.
+        /// </param>
+        /// <returns>
+        ///   An array of all arguments.
+        /// </returns>
+        private static string[] SplitArguments(string commandLine)
+        {
+            var parmChars = commandLine.ToCharArray();
+            var inSingleQuote = false;
+            var inDoubleQuote = false;
+            for (var index = 0; index < parmChars.Length; index++)
+            {
+                if (parmChars[index] == '"' && !inSingleQuote)
+                {
+                    inDoubleQuote = !inDoubleQuote;
+                    parmChars[index] = '\n';
+                }
+
+                if (parmChars[index] == '\'' && !inDoubleQuote)
+                {
+                    inSingleQuote = !inSingleQuote;
+                    parmChars[index] = '\n';
+                }
+
+                if (!inSingleQuote && !inDoubleQuote && parmChars[index] == ' ')
+                {
+                    parmChars[index] = '\n';
+                }
+            }
+
+            return new string(parmChars).Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
+        }
     }
 }
