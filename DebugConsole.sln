@@ -7,11 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugConsole", "DebugConsol
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugConsole.TestApp", "DebugConsole.TestApp\DebugConsole.TestApp.csproj", "{C9EDFC07-CA60-4BD2-9BE7-83B3D4445628}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugConsole.Implementations.Console", "DebugConsole.Console\DebugConsole.Implementations.Console.csproj", "{B2D03731-1B64-416C-B0C1-13F668ADB920}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugConsole.Implementations.Console", "DebugConsole.Implementations.Console\DebugConsole.Implementations.Console.csproj", "{B2D03731-1B64-416C-B0C1-13F668ADB920}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DebugConsole.Implementations", "DebugConsole.Implementations", "{DFCC6028-B1C5-4056-B1FC-282B8FD1A65A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugConsole.Implementations.Misc", "DebugConsole.Misc\DebugConsole.Implementations.Misc.csproj", "{2AEAA799-7DD2-4C96-BD3E-E32DDFB75E48}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugConsole.Implementations.Misc", "DebugConsole.Implementations.Misc\DebugConsole.Implementations.Misc.csproj", "{2AEAA799-7DD2-4C96-BD3E-E32DDFB75E48}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -50,7 +50,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DebugConsole.Console\DebugConsole.Implementations.Console.csproj">
+    <ProjectReference Include="..\DebugConsole.Implementations.Console\DebugConsole.Implementations.Console.csproj">
       <Project>{B2D03731-1B64-416C-B0C1-13F668ADB920}</Project>
       <Name>DebugConsole.Implementations.Console</Name>
     </ProjectReference>
